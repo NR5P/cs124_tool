@@ -7,8 +7,9 @@
 #argument 3 is only for testBed and is the assign file for the checking
 
 #put your information here
-directoryName="yourDirectoryNameHere"
-password="password"
+directoryName="rig18005" #your directory name, find by typing pwd in directory
+password="password" #password goes here
+ipAddress="something@xxx.xxx.xxx.xxx" # full ip address with host name
 
 #you'll have to go through file and enter your ipaddress and name in. This is for myself
 #if anyone else wants to use it I'll make it more user friendly later
@@ -38,22 +39,22 @@ fi
 
 if [ "$1" = "testBed" ] 
 then
-   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$3 yourname@xxx.xxx.xxx.xxx:/home/${directoryName}
-   sshpass -p "${password}" ssh -tt -p 215 yourname@xxx.xxx.xxx.xxx << EOF
+   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$3 ${ipAddress}:/home/${directoryName}
+   sshpass -p "${password}" ssh -tt -p 215 ${ipAddress} << EOF
       testBed cs124/${2} ${3}
       exit
 EOF
 elif [ "$1" = "styleChecker" ]
 then
-   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$2 yourname@xxx.xxx.xxx.xxx:/home/${directoryName}
-   sshpass -p "${password}" ssh -tt -p 215 yourname@xxx.xxx.xxx.xxx << EOF
+   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$2 ${ipAddress}:/home/${directoryName}
+   sshpass -p "${password}" ssh -tt -p 215 ${ipAddress} << EOF
       styleChecker ${2}
       exit
 EOF
 elif [ "$1" = "submit" ]
 then
-   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$2 yourname@.xxx.xxx.xxx:/home/${directoryName}
-   sshpass -p "${password}" ssh -tt -p 215 yourname@xxx.xxx.xxx.xxx << EOF
+   sshpass -p "${password}" rsync --progress -v -e "ssh -p 215" ./$2 ${ipAddress}:/home/${directoryName}
+   sshpass -p "${password}" ssh -tt -p 215 ${ipAddress} << EOF
       submit ${2}
 EOF
 else
