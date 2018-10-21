@@ -11,10 +11,6 @@ directoryName="rig18005" #your directory name, find by typing pwd in directory
 password="password" #password goes here
 ipAddress="something@xxx.xxx.xxx.xxx" # full ip address with host name
 
-#you'll have to go through file and enter your ipaddress and name in. This is for myself
-#if anyone else wants to use it I'll make it more user friendly later
-
-
 if [ $# -eq 0 ]
 then
    echo "##########################################################################"
