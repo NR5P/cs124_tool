@@ -7,7 +7,7 @@
 #argument 3 is only for testBed and is the assign file for the checking
 
 #put your information here
-directoryName="rig18005" #your directory name, find by typing pwd in directory
+directoryName="yourshere" #your directory name, find by typing pwd in directory
 password="password" #password goes here
 ipAddress="something@xxx.xxx.xxx.xxx" # full ip address with host name
 
